@@ -1,0 +1,30 @@
+# Workspace state files (per-deployment, not source)
+.router_state.json
+router.log
+inbox/*
+!inbox/_processed
+inbox/_processed/*
+!inbox/_processed/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local config that should not be shared
+*.local.json
+.env
+.env.local

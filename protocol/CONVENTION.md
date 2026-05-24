@@ -18,6 +18,10 @@ Examples:
 2026-05-21_1145_agent1__to__operator__status-update.md
 ```
 
+## Timestamp discipline
+
+The `YYYY-MM-DD_HHMM` in the filename must match the file's mtime within ~1 minute. Compute it by calling `date +%Y-%m-%d_%H%M` (or the language equivalent) **immediately before** the file write, not earlier in composition. Embedding a stale or guessed value produces forward-skewed filenames that mislead any downstream analysis of message latency or dyad volume, and undermines the inspectable plain-text audit trail.
+
 ## Delivery semantics
 
 - The router polls the inbox directory every 10 seconds.
